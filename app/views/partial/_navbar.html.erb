@@ -13,12 +13,12 @@
             <%= link_to "#", class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", "data-toggle": :dropdown, "aria-haspopup": :true, "aria-expanded": false do %>
               <%= image_tag current_user.profile_photo, class: "avatar avatar-size32" %>
             <% end %>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
           <li class="nav-item">
-            <%= link_to "ツイート", "#", class: "btn btn-primary tweet-btn" %>
+            <%= link_to "ツイート",  new_tweet_path, class: "btn btn-primary tweet-btn" %>
           </li>
         </ul>
       </div>

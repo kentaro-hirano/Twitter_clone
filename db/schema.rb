@@ -10,18 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210314011832) do
+ActiveRecord::Schema.define(version: 2021_03_14_032745) do
+
+  create_table "tweets", force: :cascade do |t|
+    t.text "text"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",                        null: false
-    t.string   "encrypted_password",     default: "",                        null: false
-    t.string   "reset_password_token"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at",                                                 null: false
-    t.datetime "updated_at",                                                 null: false
-    t.string   "username",               default: "",                        null: false
-    t.string   "profile_photo",          default: "default_profile_img.png"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "username", default: "", null: false
+    t.string "profile_photo", default: "default_profile_img.png"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
